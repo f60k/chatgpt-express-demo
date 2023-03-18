@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+  <form action="/" method="post">
+    <select name="where" id=""></select>
+    <label>御徒町の（●●について）人気スポットを問うてみる？</label>
+    <input required type="text" name="what" placeholder="何について?"/>
+    <input type="submit" value="SEND"/>
+  </form>
+  <ul>
+    <% for(let todo of todos){ %>
+      <li><span><%= todo %></span></li>
+    <% } %>
+  </ul>
+  </body>
+</html>
