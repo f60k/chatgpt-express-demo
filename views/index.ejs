@@ -2,19 +2,25 @@
 <html>
   <head>
     <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
   <body>
-  <form action="/" method="post">
-    <select name="where" id=""></select>
-    <label>御徒町の（●●について）人気スポットを問うてみる？</label>
-    <input required type="text" name="what" placeholder="何について?"/>
-    <input type="submit" value="SEND"/>
-  </form>
-  <ul>
-    <% for(let todo of todos){ %>
+    <form action="/" method="post">
+      <select name="where" id="">
+        <option value="御徒町">御徒町</option>
+        <option value="東伊豆">東伊豆</option>
+        <option value="鶯谷">鶯谷</option>
+        <option value="神楽坂">神楽坂</option>
+      </select>
+      <label>の</label>
+      <input required type="text" name="what" placeholder="何について?" /><label>の人気スポットをGPTに問うてみる！</label>
+      <input type="submit" value="質問する" />
+    </form>
+    <p>20秒以上かかることがあります。（処理はブロッキングするので気長に待ちましょう）</p>
+    <ul>
+      <% for(let todo of todos){ %>
       <li><span><%= todo %></span></li>
-    <% } %>
-  </ul>
+      <% } %>
+    </ul>
   </body>
 </html>

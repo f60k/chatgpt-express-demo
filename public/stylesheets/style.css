@@ -2,11 +2,15 @@ body
 {
 	height: 100%;
 	padding-top: 50px;
+	padding-left: 20px;
+	padding-right: 20px;
+	font-family: sans-serif;
+	font-size: 12px;
 }
 
 form {
   /* padding: 50px; */
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 18px "Lucida Grande", Helvetica, Arial, sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -15,4 +19,23 @@ form {
 
 a {
   color: #00B7FF;
+}
+
+p
+{
+	text-align: center;
+}
+
+ul
+{
+	list-style: none;
+	border-top: 1px solid black;
+	padding: 0;
+}
+
+li
+{
+	border-bottom: 1px solid black;
+	padding-top: 1em;
+	padding-bottom: 1em;
 }

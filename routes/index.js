@@ -24,13 +24,14 @@ const openai = new OpenAIApi(configuration);
 
 let todos = [];
 
-async function ask(content, res, model = "gpt-3.5-turbo-0301") {
+async function ask(query, res, model = "gpt-3.5-turbo-0301") {
 	const response = await openai.createChatCompletion({
 		model: model,
-		messages: [{ role: "user", content: content }],
+		messages: [{ role: "user", content: query }],
 	});
 
-	const answer = response.data.choices[0].message?.content;
+	const answer =
+		"(Q:" + query + ")" + response.data.choices[0].message?.content;
 	console.log(answer);
 	todos.push(answer);
 	res.redirect("/");
@@ -49,9 +50,9 @@ router.post("/", function (req, res, next) {
 	const what = req.body.what;
 	// todos.push(todo);
 
-	query = where + "の" + what + "の人気スポットを知りたい。";
+	query = where + "の" + what + "の人気スポットを５件知りたい。";
 	console.log("query is " + query);
-	// ask(query, res);
+	ask(query, res);
 	// res.redirect("/");
 });
 
