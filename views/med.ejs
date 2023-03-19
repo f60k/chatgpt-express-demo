@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <form action="/med" method="post">
+      <select name="where" id="">
+        <option value="糖尿病">糖尿病</option>
+        <option value="うつ病">うつ病</option>
+        <option value="免疫系">免疫系</option>
+        <option value="DNAプラスミド">DNAプラスミド</option>
+      </select>
+      <label>の</label>
+      <input required type="text" name="what" placeholder="何について?" /><label>を教えて！GPT!</label>
+      <input type="submit" value="質問する" />
+    </form>
+    <p>20秒以上かかることがあります。（処理はブロッキングするので気長に待ちましょう）</p>
+    <ul>
+      <% for(let todo of todos){ %>
+      <li><span><%= todo %></span></li>
+      <% } %>
+    </ul>
+  </body>
+</html>
